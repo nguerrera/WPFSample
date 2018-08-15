@@ -1,0 +1,1 @@
+@call %~dp0run.cmd msbuild /v:m /m /restore %*

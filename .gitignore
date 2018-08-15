@@ -1,0 +1,6 @@
+.vs/
+.dotnet/
+[Bb]in/
+[Oo]bj/
+*.binlog
+*.log

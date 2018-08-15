@@ -1,0 +1,37 @@
+<Project>
+  <PropertyGroup Condition="'$(TargetFramework)' == 'netcoreapp3.0'">
+    <!-- Feed for Microsoft.Private.WPF nupkg -->
+    <RestoreAdditionalProjectSources>https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json</RestoreAdditionalProjectSources>
+    
+    <!-- Set Microsoft.Private.WPF as the shared framework -->
+    <MicrosoftNETPlatformLibrary>Microsoft.Private.WPF</MicrosoftNETPlatformLibrary>
+    
+    <!-- dotnet/sdk still doesn't say that .NET Core 3.0 is supported -->
+    <NETCoreAppMaximumVersion>3.0</NETCoreAppMaximumVersion>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.0'">
+    <PackageReference Include="Microsoft.Private.WPF" Version="$(MicrosoftWpfPrivatePackageVersion)" />
+ </ItemGroup>
+
+ <Import 
+   Condition="'$(TargetFramework)' == 'netcoreapp3.0'"
+   Project="$(MSBuildToolsPath)\Microsoft.WinFX.targets"
+   />
+
+<!-- There's a stub WindowsBase in Microsoft.NETCore.App that can win in conflict resolution if
+     it has file version greater than the one in Microsoft.Private.WPF. -->
+<Target
+  Condition="'$(TargetFramework)' == 'netcoreapp3.0'"
+  Name="_WorkaroundWindowsBaseConflict"
+  BeforeTargets= "_HandlePackageFileConflicts"
+  >
+  <ItemGroup>
+    <Reference
+      Remove="%(Reference.Identity)" 
+      Condition="'%(Reference.Filename)' == 'WindowsBase'
+                 and '%(Reference.NuGetPackageId)' != 'Microsoft.Private.WPF'"
+      />
+    </ItemGroup>
+  </Target>
+</Project>

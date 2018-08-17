@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1
+﻿namespace WinFormsSample
 {
     partial class Form1
     {
@@ -34,11 +34,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(119, 106);
+            this.label1.Location = new System.Drawing.Point(286, 231);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 20);
+            this.label1.Size = new System.Drawing.Size(94, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Hello World";
+            this.label1.Text = "Hello World!";
             // 
             // Form1
             // 

@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <Compile Include="..\WinFormsSample.Desktop\*.cs" />
+    <EmbeddedResource Include="..\WinFormsSample.Desktop\*.resx" />
   </ItemGroup>
 
 </Project>

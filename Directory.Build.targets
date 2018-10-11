@@ -1,5 +1,3 @@
 <Project>
-  <!-- Remove hack in Microsoft.DesktopUI.App that was there to make using in-box, full framework PBT work -->
-  <Target Name="_swapCoreLibReference"  />
-  <Target Name="_undoSwapCoreLibReference" />
+  <Import Project="DisableCoreLibSwap.targets" Condition="'$(MSBuildRuntimeType)' == 'Core'" />
 </Project>

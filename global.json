@@ -1,0 +1,6 @@
+{
+    "msbuild-sdks": {
+        // set version to match the packages produced in your WPF rep
+        "Microsoft.NET.Sdk.Wpf": "3.0.0-alpha-27009-0"
+    }
+}

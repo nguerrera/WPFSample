@@ -1,1 +1,0 @@
-@call %~dp0run.cmd start "" devenv.exe WPFSample.sln %*

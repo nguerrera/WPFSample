@@ -1,7 +1,2 @@
 <Project>
-  <PropertyGroup>
-    <!-- Don't let Microsoft.Private.WPF try to import Microsoft.WinFX.targets because that doesn't work in tmp project -->
-    <!-- Instead import it in Directory.Build.targets -->
-    <IncludeWinFxTargets>false</IncludeWinFxTargets>
-  </PropertyGroup>
 </Project>

@@ -6,9 +6,6 @@
         xmlns:local="clr-namespace:WPFSample.Core"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
         <Label Content="Hello .NET Core!" HorizontalAlignment="Center" VerticalAlignment="Center"
                FontSize="40"/>
-        <Button Content="Exit" Grid.Row="1" FontSize="20" Click="ButtonExit_Click"/>
-    </Grid>
 </Window>
